@@ -1,0 +1,59 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.32.3",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.9.9",
+]
+
+[tool.ruff]
+# 最大行長（PEP 8 の推奨は 79、black のデフォルトは 88）
+line-length = 88
+
+# 対応する Python のバージョン（例: "py38", "py39", "py310", "py311"）
+target-version = "py311"
+
+# 自動修正を有効にする（ruff check --fix を実行可能にする）
+fix = true
+
+# 未使用の import などの不要なコードを削除する
+unsafe-fixes = true
+
+[tool.ruff.lint]
+# 有効にするルールセット
+select = [
+    "E",  # pycodestyle（コードスタイル）
+    "F",  # Pyflakes（バグ検出）
+    "I",  # isort（import の並び順）
+    "N",  # pep8-naming（命名規則）
+    "D",  # pydocstyle（docstring の規則）
+    "UP", # pyupgrade（古い構文を新しいものに変換）
+]
+
+# 無視するルール（必要に応じて追加）
+ignore = [
+    "D100", # モジュールの docstring がないことを許容
+    "D104", # パッケージの docstring がないことを許容
+]
+
+# docstring のルールを Google スタイルに設定
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+# import の並び順を設定
+[tool.ruff.lint.isort]
+known-first-party = ["my_project"]  # 自分のプロジェクトのモジュール
+lines-between-types = 1  # 標準ライブラリ、サードパーティ、ローカルの間に空行を入れる
+combine-as-imports = true  # `import a as A, b as B` のように1行にまとめる
+
+# 除外するディレクトリやファイル
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D"]  # テストコードでは docstring に関する警告を無視
+"migrations/*" = ["E501"]  # マイグレーションファイルの長すぎる行を無視
