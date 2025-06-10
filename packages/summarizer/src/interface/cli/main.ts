@@ -8,7 +8,7 @@ function main() {
 	const greetingUseCase = new GreetingUseCase();
 
 	// ユースケースを実行
-	const result = greetingUseCase.execute("Developer");
+	const result = greetingUseCase.execute("Kuriken");
 
 	// 結果を表示
 	console.log("✅ Main process finished with result:");
