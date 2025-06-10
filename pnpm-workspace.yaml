@@ -1,0 +1,3 @@
+# rhythm-recruiter/pnpm-workspace.yaml
+packages:
+  - 'packages/*'

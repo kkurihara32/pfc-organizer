@@ -1,0 +1,37 @@
+{
+	"name": "rhythm-recruiter-monorepo",
+	"version": "1.0.0",
+	"private": true,
+	"description": "A bot that crawls, summarizes, and notifies drummer job postings.",
+	"author": "Your Name",
+	"license": "ISC",
+	"type": "module",
+	"scripts": {
+		"//--- 全パッケージ共通コマンド ---//": "",
+		"build": "pnpm --stream -r build",
+		"clean": "pnpm -r exec rimraf dist tsconfig.tsbuildinfo",
+		"test": "echo \"テストは未実装です\" && exit 0",
+		"//--- リンター & フォーマッター ---//": "",
+		"lint": "eslint \"packages/**/*.ts\"",
+		"lint:fix": "eslint \"packages/**/*.ts\" --fix",
+		"format": "prettier --write \"packages/**/*.{ts,json,md,yaml}\"",
+		"//--- 特定パッケージの実行 ---//": "",
+		"dev:orchestrator": "pnpm --filter @rhythm-recruiter/orchestrator dev"
+	},
+	"devDependencies": {
+		"@types/node": "^20.14.2",
+		"@typescript-eslint/eslint-plugin": "^7.13.0",
+		"@typescript-eslint/parser": "^7.13.0",
+		"eslint": "^8.57.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-prettier": "^5.1.3",
+		"prettier": "^3.3.2",
+		"rimraf": "^5.0.7",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.4.5"
+	},
+	"engines": {
+		"node": ">=20.0.0",
+		"pnpm": ">=9.0.0"
+	}
+}

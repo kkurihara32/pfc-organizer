@@ -1,0 +1,28 @@
+{
+	"compilerOptions": {
+		// --- Module & Target ---
+		"target": "ES2022",
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"esModuleInterop": true,
+
+		// --- Strictness & Quality ---
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+
+		// --- Project Structure ---
+		"baseUrl": ".",
+		"paths": {
+			"@rhythm-recruiter/*": ["packages/*/src"]
+		},
+
+		// --- Output & Debugging ---
+		"declaration": true,
+		"sourceMap": true,
+		"skipLibCheck": true
+	},
+	"exclude": ["node_modules", "**/dist", "**/node_modules"]
+}
