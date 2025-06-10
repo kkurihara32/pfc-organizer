@@ -1,0 +1,15 @@
+{
+	"extends": "../../tsconfig.json", // ルートの設定を継承
+	"compilerOptions": {
+		"outDir": "./dist",
+		"rootDir": "./src",
+		// TypeScriptのプロジェクト参照機能を使うと、依存関係のビルドが自動化されて便利
+		"composite": true
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["node_modules", "dist"]
+	// 依存するローカルパッケージがあれば `references` を追加
+	// "references": [
+	//   { "path": "../core-utils" }
+	// ]
+}

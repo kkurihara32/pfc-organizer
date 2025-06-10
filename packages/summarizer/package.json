@@ -1,0 +1,19 @@
+{
+	"name": "@rhythm-recruiter/summarizer",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"build": "tsc",
+		"start": "node dist/interface/cli/main.js",
+		"dev": "tsx src/interface/cli/main.ts"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"tsx": "^4.7.1"
+	}
+}
